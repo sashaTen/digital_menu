@@ -1,5 +1,6 @@
 
 
+
 const list =  `
 Pina Colada,
 Negroni,
@@ -130,31 +131,50 @@ const menu = [
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
   ];
-
-
+ 
+ 
   const breakfast_btn =  document.querySelector('.breakfast')
   const lunch_btn  =  document.querySelector('.lunch')
   const shakes_btn = document.querySelector('.shakes')
   const drinks_btn   =document.querySelector('.drinks')
+  const btns   =  document.getElementsByClassName('btn')
+  
+function  make_all_white(){
+  for(let i   = 0 ;  i <  btns.length ;  i++){
+    btns[i].style.background =  'white'
+  }
+}
+
+
+
   breakfast_btn.addEventListener('click',()=>{
+    make_all_white()
+    breakfast_btn.style.background = 'black'
+    display_category('breakfast')
    
-   display_category('breakfast')
   })
 
   lunch_btn.addEventListener('click' , ()=>{
+    make_all_white()
+    lunch_btn.style.background = 'black'
     display_category('lunch')
   })
 
   shakes_btn.addEventListener('click',   ()=>{
+    make_all_white()
+    shakes_btn.style.background = 'black'
     display_category('shakes')
   })
 
 drinks_btn.addEventListener('click' ,  ()=>{
   container.innerHTML =  ''
+  make_all_white()
+  drinks_btn.style.background=  'black'
   list_of_famous.forEach(find_name)
 })
 
-
+drinks_btn.style.background='black'
+list_of_famous.forEach(find_name)
 
 
 
@@ -178,3 +198,4 @@ drinks_btn.addEventListener('click' ,  ()=>{
           
        }
   }
+
