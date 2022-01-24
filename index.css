@@ -1,30 +1,37 @@
 *{
     box-sizing: border-box;
-    background-color: rgb(243, 243, 234);
     font-family: cursive;
 }
 
-img{
-    width: 300px;
-    border:  rgb(27, 146, 175) 10px  solid;
-    border-top-right-radius:20% ;
-    border-bottom-left-radius:30% ;
-    box-shadow: cadetblue 10 px 10px 10px;
+body{
+    background-color: rgb(243, 243, 234);
 }
+
+img{
+    width: 200px;
+    border:  rgb(27, 146, 175) 5px  solid;
+    }
 
 h2  , h1 , p{
     color: rgb(27, 146, 175);
 }
+
 .container{
+    padding-left: 50px;
+    background-color:black;
+    width: 800px;
+    position:absolute;
+    top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    margin-left: 100px;
+    margin-left: 300px;
     margin-top:100px ;
-    row-gap: 50px;
+    row-gap: 30px;
 }
 .single_drink_container {
     display: grid;
+    background: transparent;
     
 }
 #btn ,  #input{
@@ -34,20 +41,19 @@ h2  , h1 , p{
 .header{
     display: flex;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    
+    margin-left: 250px;
+    margin-top: 80px;
 }
 .btn{
     margin-left: 50px;
     height: auto;
     width: 150px;
     border: rgb(27, 146, 175) 3px solid;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
     transition: 1.2s;
 }
 .btn:hover{
     color: white;
     background-color: cadetblue;
-  
+    
 }
