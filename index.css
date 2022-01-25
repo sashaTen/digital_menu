@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     font-family: cursive;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -8,7 +9,7 @@ body{
 }
 
 img{
-    width: 200px;
+    width: 300px;
     border:  rgb(27, 146, 175) 5px  solid;
     }
 
@@ -19,15 +20,14 @@ h2  , h1 , p{
 .container{
     padding-left: 50px;
     background-color:black;
-    width: 800px;
-    position:absolute;
-    top: 50px;
+    width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    margin-left: 300px;
     margin-top:100px ;
     row-gap: 30px;
+    border: rgb(27, 146, 175) 3px solid;
+
 }
 .single_drink_container {
     display: grid;
@@ -40,10 +40,14 @@ h2  , h1 , p{
 
 .header{
     display: flex;
-    width: 100%;
-    
-    margin-left: 250px;
-    margin-top: 80px;
+    width: 90%;
+    top: 100px;
+    position:relative;
+    margin-right: 100px;
+
+}
+.header>.btn{
+    width: 350px;
 }
 .btn{
     margin-left: 50px;
@@ -56,4 +60,183 @@ h2  , h1 , p{
     color: white;
     background-color: cadetblue;
     
+}
+.sticky_container{
+    display: flex;
+    justify-content: space-between  
+    
+}
+ul{
+    margin-top: 50px;
+    display: flex;
+    list-style-type: none;
+    gap: 25px;
+    margin-right: 100px;
+}
+li{
+    font-size: 1.4rem;
+}
+li:hover{
+    font-weight: bold;
+    color:cadetblue
+    
+}
+.cafe_title{
+    text-transform: capitalize;
+    font-size: 3.5rem;
+}
+.meet{
+    color: rgb(42, 42, 66)
+}
+.key{
+    color: pink;
+}
+
+.orders{ 
+    margin-top: 50px;
+    height: 50px;
+
+}
+.orders:hover{
+    background: cadetblue;
+    color: white;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: url('./images/item-1.jpeg');
+    background-size: 100%;
+    border: rgb(27, 146, 175) 3px solid;
+    opacity: 0;
+    transition: 1.2s;
+}
+
+.block_in_hero{
+width: 70%;
+height:0px;
+background: rgb(4, 20, 20);
+opacity: 0.6;
+position: absolute;
+top: 260px;
+left: 200px;
+transition: 2s;
+
+}
+.slogan_in_hero{
+    position: absolute;
+    top: 400px;
+    left : 550px ;
+    text-transform: capitalize;
+    opacity: 0;
+    transition: 2s;
+    
+    
+
+}
+.slogan{
+    color: whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+}
+.offer{
+    color: white;
+    font-size: 1.5rem;
+}
+.offer_btn{
+color: black;
+background: white;
+}
+
+.about{
+    background-image: url('./images/item-5.jpeg');
+    background-size: 100%;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    margin-bottom: 200px;
+}
+
+.about>img{
+    width: 600px;
+    height: auto;
+    position: absolute;
+    top: 100px;
+    left: 700px;
+    opacity: 1;
+    transition: 2.5s;
+    border: solid 1px black;
+}
+  .about_cover{
+      top: 950px;
+      position: absolute;
+      width: 70%;
+      height: 70vh;
+      background: black;
+      opacity: 0.5;
+      left: 150px;
+  }
+.cup{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 100px;
+    height: 100px;
+    background:   pink;
+    border: solid 5px cadetblue;
+    border-bottom-left-radius:60% ;
+    border-bottom-right-radius:60% ;
+    z-index:1;
+}
+.stick{
+    width: 15px;
+    height: 40px;
+    background: pink;
+    border:solid 5px cadetblue ;
+    position: relative;
+    top: 195px;
+    left: 242px;
+    z-index: 1;
+}
+.bottom_of_cup{
+    width: 80px;
+    height: 15px;
+    background: pink;
+    border:solid 5px cadetblue ;
+    position: relative;
+    top: 195px;
+    left: 210px;
+    z-index: 1;
+}
+.wine{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 100px;
+    height: 0px;
+    background:  white;
+    border: solid 5px cadetblue;
+    border-bottom-left-radius:60% ;
+    border-bottom-right-radius:60% ;
+    transition: 1.5s;
+    z-index: 1;;
+}
+.about_us{
+    color: white;
+    width: 250px;
+    position: absolute ;
+    top: 150px;
+    left: 400px;
+    z-index:1;
+    font-size: 1.4rem;
+}
+.big_menu{
+    margin-top: -200px;
+    font-size: 3rem;
+    padding-left: 40%;
+    height: 50px;
+    text-transform: uppercase;
+}
+.u{
+    color: rgb(247, 166, 179);
 }
