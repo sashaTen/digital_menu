@@ -1,6 +1,5 @@
 
 
-
 const list =  `
 Pina Colada,
 Negroni,
@@ -198,4 +197,54 @@ list_of_famous.forEach(find_name)
           
        }
   }
+const slogan  =   document.querySelector('.slogan_in_hero')
+const black_background =  document.querySelector('.block_in_hero')
+const hero   =document.querySelector('.hero')
 
+hero.style.backgroundImage  = `url('${menu[3].img}')`
+setTimeout(() => {
+  hero.style.opacity= '1'
+},1000);
+
+
+setTimeout(() => {
+  black_background.style.height =  '70vh'
+}, 2100);
+
+setTimeout(() => {
+  slogan.style.opacity='1'
+}, 2300);
+
+
+const about_img  = document.querySelector('.about>img')
+const about_list_item   =  document.querySelector('.about_list_item')
+const menu_list_item   =  document.querySelector('.menu')
+const home_list_item   =  document.querySelector('.home')
+const gallery_list_item   =  document.querySelector('.gallery ')
+const chefs   =  document.querySelector('.chefs')
+const blog   =  document.querySelector('.blog')
+const contacts   = document.querySelector('.contacts')
+const wine  = document.querySelector('.wine')
+
+function pageScroll() {
+  window.scrollBy(0,800); // horizontal and vertical scroll increments
+  about_img.style.left = '100px'
+  about_img.style.opacity = '1'
+}
+
+
+setInterval(() => {
+  wine.style.height = '100px'
+  
+ 
+}, 2000);
+
+function  full_cup(){
+  wine.style.height = '0px'
+}
+
+
+
+setInterval(() => {
+  full_cup()
+}, 3000);
