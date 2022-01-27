@@ -62,6 +62,13 @@ h2  , h1 , p{
     
 }
 .sticky_container{
+    position: sticky;
+    top:0px;
+    z-index: 2;
+    background-color: rgb(243, 243, 234);
+    height: 120px;
+}
+.container_for_menu{
     display: flex;
     justify-content: space-between  
     
@@ -90,6 +97,7 @@ li:hover{
 }
 .key{
     color: pink;
+    text-shadow: 1px 1px 2px red, 0 0 1em  green, 0 0 0.2em  green;
 }
 
 .orders{ 
@@ -237,6 +245,102 @@ background: white;
     height: 50px;
     text-transform: uppercase;
 }
-.u{
+.u{ 
     color: rgb(247, 166, 179);
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+.gallery_of_photos{
+    display: grid;
+    grid-template-columns:repeat(3 ,   1fr) ;
+}
+.gallery_of_photos>img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin : 20px;
+    
+   
+}
+
+.gallery_greeting{
+    margin-top: 70px;
+    width: 500px;
+    height: 150px;
+    margin-left: 35%;
+    background-color: black;
+    transition: 1s ease;
+    transform: skewX(10deg);
+    border :    black  5px solid
+}
+.gallery_greeting>h1{
+     text-transform: uppercase;
+     letter-spacing: 5px;
+     margin-left: 35%;
+     transition: 1s ease;
+     padding-top: 50px;
+     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+     font-size: 2rem;
+}
+
+.description{
+    width: 600px;
+    height: 600px;
+    display: grid;
+    opacity: 1;
+    transition: ease 1.2s;
+    z-index: 2;
+    
+}
+.description>img{
+    width: 500px;
+    border-radius:10% ;
+    margin-left: 50px;
+    z-index: 1;
+    border: white 2px  solid;
+}
+.description>h1{
+    margin-left: 100px;
+    z-index: 1;
+    color: white;
+}
+.description>p{
+    margin-left:150px;
+    width: 300px;
+    z-index: 1;
+    color: white;
+}
+.desc_background{
+    background: black;
+    width: 600px;
+    height: 600px;
+    opacity: 0.5;
+    position: absolute;
+    top: 150;
+}
+
+#closeDesc{
+    width: 50px;
+    margin-top: 100px;
+    margin-right : 150px;
+    z-index: 1;
+    background: transparent;
+    color: white;
+    border: white 2px solid;
+    position: relative;
+    top: 50px;
+    z-index: 4;
+    
+
+}
+.description_container{
+    position: absolute;
+
+    left: -900px;
+  
+    width: 800px;
+    height: 600px;
+    margin-left: 300px;
+
+  
 }
