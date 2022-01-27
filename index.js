@@ -248,3 +248,59 @@ function  full_cup(){
 setInterval(() => {
   full_cup()
 }, 3000);
+
+const  colors =  ['green' ,   'pink' ,   'brown' ,    'catedblue' ]
+let number_of_color =  0
+const  gallery_greet  =   document.querySelector('.gallery_greeting>h1')
+setInterval(() => {
+  number_of_color++;
+  if(number_of_color>=colors.length){
+    number_of_color =  0;
+  }
+  gallery_greet.style.color= colors[number_of_color]
+}, 1500);
+
+const degrees =  ['skew(-5deg)'  ,  'skew(5deg)'   ,   'skew(-10deg)'   ,  'skew(10deg)']
+const gallery_greet_background =  document.querySelector('.gallery_greeting')
+
+setInterval(() => {
+  gallery_greet_background.style.background =  colors[number_of_color+1]
+  gallery_greet_background.style.transform=degrees[number_of_color]
+}, 1500);
+
+//gallery_greet_background.style.transform=skew(-10deg)'
+
+const images_of_gallery =  document.querySelectorAll('.gallery_of_photos>img')
+
+for(let i   = 0   ;  i < images_of_gallery.length ;  i  ++){
+  images_of_gallery[i].addEventListener('click'   ,  ()=>{
+    show_description_of_image(i)
+  })
+}
+
+
+
+
+const description_elt   =   document.querySelector('.description')
+
+function show_description_of_image(number){
+ description_elt.style.position  = 'fixed'
+ description_elt.style.top = '15%'
+ description_elt.style.left =  '30%'
+description_elt.innerHTML =    `
+
+<h1> TITLE :   ${menu[number].title}</h1>
+<p> ${menu[number].price}$</p>
+<img src="${menu[number].img}" alt="">
+<p>${menu[number].desc}</p>
+<div  class ="desc_background">
+
+</div>
+`     
+}
+
+
+description_elt.addEventListener('click' , ()=>{
+  description_elt.style.position='absolute'
+  description_elt.style.left = '-900px'
+})
