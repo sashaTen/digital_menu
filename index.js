@@ -228,9 +228,9 @@ const wine  = document.querySelector('.wine')
 
 function pageScroll() {
   window.scrollBy(0,800); // horizontal and vertical scroll increments
-  about_img.style.left = '100px'
-  about_img.style.opacity = '1'
+ 
 }
+
 
 
 setInterval(() => {
@@ -288,7 +288,7 @@ function show_description_of_image(number){
  description_elt.style.top = '15%'
  description_elt.style.left =  '30%'
 description_elt.innerHTML =    `
-
+<h1 class='cancel_btn'>X</h1>
 <h1> TITLE :   ${menu[number].title}</h1>
 <p> ${menu[number].price}$</p>
 <img src="${menu[number].img}" alt="">
@@ -304,3 +304,19 @@ description_elt.addEventListener('click' , ()=>{
   description_elt.style.position='absolute'
   description_elt.style.left = '-900px'
 })
+
+const chef_title   =  document.querySelector('.chef_title>h1')
+let   chef_headline =  'our chefs'
+let Upper_case_letter =  0 ;
+setInterval(() => {
+  Upper_case_letter+=1;
+  if(Upper_case_letter>chef_headline.length){
+    Upper_case_letter =0;
+  }
+  chef_title.innerHTML =   chef_headline.replace(chef_headline.charAt(Upper_case_letter) , 
+  `<span class='pink_letter'>${ chef_headline.charAt(Upper_case_letter).toUpperCase()}</span>`)
+
+
+}, 500);
+
+
