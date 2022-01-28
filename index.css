@@ -313,7 +313,7 @@ background: white;
 .desc_background{
     background: black;
     width: 600px;
-    height: 600px;
+    height: 800px;
     opacity: 0.5;
     position: absolute;
     top: 150;
@@ -427,4 +427,23 @@ background: white;
     background:pink;
    
   
+}
+
+.contact_headline{
+margin-left: 40%;
+text-transform: uppercase;
+color: black;
+}
+.contact_container{
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    width: 500px;
+    margin-left:500px ;
+    margin-top: 100px;
+    height: 0px;
+   margin-bottom: 100px;
+}
+
+.space{
+    height: 200px;
 }
