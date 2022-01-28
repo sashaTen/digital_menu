@@ -1,4 +1,6 @@
-
+const gallery_greet_background =  document.querySelector('.gallery_greeting')
+const chefs_container  = document.querySelector('.chef_title')
+const contanct_headline = document.querySelector('.contact_headline')
 
 const list =  `
 Pina Colada,
@@ -214,24 +216,36 @@ setTimeout(() => {
 setTimeout(() => {
   slogan.style.opacity='1'
 }, 2300);
-
-
+const menu_board  = document.querySelector('.big_menu')
+const header  =   document.querySelector('.header')
 const about_img  = document.querySelector('.about>img')
 const about_list_item   =  document.querySelector('.about_list_item')
 const menu_list_item   =  document.querySelector('.menu')
 const home_list_item   =  document.querySelector('.home')
-const gallery_list_item   =  document.querySelector('.gallery ')
+const gallery_list_item   =  document.querySelector('.gallery_in_nav')
 const chefs   =  document.querySelector('.chefs')
-const blog   =  document.querySelector('.blog')
 const contacts   = document.querySelector('.contacts')
 const wine  = document.querySelector('.wine')
 
-function pageScroll() {
-  window.scrollBy(0,800); // horizontal and vertical scroll increments
- 
-}
+about_list_item.addEventListener('click' ,  ()=>{
+  hero.scrollIntoView()
+})
 
+menu_list_item.addEventListener('click' , ()=>{
+  menu_board.scrollIntoView()
+})
 
+gallery_list_item.addEventListener('click' , ()=>{
+gallery_greet_background.scrollIntoView()
+})
+
+chefs.addEventListener('click' , ()=>{
+  chefs_container.scrollIntoView()
+})
+
+contacts.addEventListener('click' , ()=>{
+  contanct_headline.scrollIntoView()
+})
 
 setInterval(() => {
   wine.style.height = '100px'
@@ -261,7 +275,6 @@ setInterval(() => {
 }, 1500);
 
 const degrees =  ['skew(-5deg)'  ,  'skew(5deg)'   ,   'skew(-10deg)'   ,  'skew(10deg)']
-const gallery_greet_background =  document.querySelector('.gallery_greeting')
 
 setInterval(() => {
   gallery_greet_background.style.background =  colors[number_of_color+1]
@@ -285,7 +298,7 @@ const description_elt   =   document.querySelector('.description')
 
 function show_description_of_image(number){
  description_elt.style.position  = 'fixed'
- description_elt.style.top = '15%'
+ description_elt.style.top = '8%'
  description_elt.style.left =  '30%'
 description_elt.innerHTML =    `
 <h1 class='cancel_btn'>X</h1>
