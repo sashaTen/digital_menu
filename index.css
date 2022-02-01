@@ -44,7 +44,23 @@ h2  , h1 , p{
     top: 100px;
     position:relative;
     margin-right: 100px;
+}
+.order_container{
+    display: grid;
+    position: absolute;
+    width: 300px;
+    height: auto;
+    background: white;
+    left: -400px;
+    transition: 1.2s ease;
 
+}
+#clear_items{
+    position: relative;
+    top: 10px;
+}
+.ordered{
+    display: grid;
 }
 .header>.btn{
     width: 350px;
@@ -88,6 +104,9 @@ li:hover{
     color:cadetblue
     
 }
+#clear_items:hover{
+color: red;
+}
 .cafe_title{
     text-transform: capitalize;
     font-size: 3.5rem;
@@ -99,11 +118,23 @@ li:hover{
     color: pink;
     text-shadow: 1px 1px 2px red, 0 0 1em  green, 0 0 0.2em  green;
 }
-
+.total{
+    color: black;
+}
 .orders{ 
     margin-top: 50px;
     height: 50px;
-
+    
+}
+span{
+    border: cadetblue 2px  solid;
+}
+.order_accepted{
+    background:lightblue;
+    color: black;
+    border: black 5px solid;
+    
+    
 }
 .orders:hover{
     background: cadetblue;
@@ -447,3 +478,4 @@ color: black;
 .space{
     height: 200px;
 }
+
