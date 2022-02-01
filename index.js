@@ -1,61 +1,3 @@
-const gallery_greet_background =  document.querySelector('.gallery_greeting')
-const chefs_container  = document.querySelector('.chef_title')
-const contanct_headline = document.querySelector('.contact_headline')
-
-const list =  `
-Pina Colada,
-Negroni,
-Long Island Iced Tea,
-Old Fashioned,
-Dry Martini,
-Margarita,
-Daiquiri,
-Aperol Spritz,
-Espresso Martini,
-Manhattan,
-Caipirinha,
-Mint Julep,
-Mai Tai
-`
-
-
-const   list_of_famous   =   list.split(',');
-async  function  find_name(name){
-const  dats   =   await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
-const resp   =  await dats.json();
-
-
-container.innerHTML += `
-<div   class  =   'single_drink_container'>
-<h2>${resp.drinks[0].strDrink}</h2>
-<img src="${resp.drinks[0].strDrinkThumb}" alt=""> 
-<h2>${generate_random_price()}$</h2>
-
-
-</div>
-`
-
-
-}
-const  numbers   = []
-function generate_random_price(){
-    //console.log(Math.floor(Math.random()*19));
-    let  number  =  Math.floor(Math.random()*19)
-    if(number< 8){
-         number = number+8
-    }
-   return number
-        //console.log(numbers);
-} 
-
-for(let i = 0 ;  i <list_of_famous.length;   i ++){
-    generate_random_price()
-}
-
-console.log(numbers);
-
-
-const container   =  document.querySelector('.container')
 
 
 const menu = [
@@ -132,7 +74,133 @@ const menu = [
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
   ];
+
+
+const total_sum  =  document.querySelector('.total')
+const clear_items_btn =   document.getElementById('clear_items')
+const ordered =  document.querySelector('.ordered')
+const order_container = document.querySelector('.order_container')
+const btn_orders  = document.querySelector('.orders')
+const gallery_greet_background =  document.querySelector('.gallery_greeting')
+const chefs_container  = document.querySelector('.chef_title')
+const contanct_headline = document.querySelector('.contact_headline')
+const close_orders   =document.getElementById('close_orders')
+const list_of_orders = []
+const list =  `
+Pina Colada,
+Negroni,
+Long Island Iced Tea,
+Old Fashioned,
+Dry Martini,
+Margarita,
+Daiquiri,
+Aperol Spritz,
+Espresso Martini,
+Manhattan,
+Caipirinha,
+Mint Julep,
+Mai Tai
+`
+const price_of_drinks=[11,12,12,9,8,17,13,14,12,10,9,11,12]
+
+
+const   list_of_famous   =   list.split(',');
+const arrr =  [1,2,3,6,5,4];
+function  find(arrr,item){
+  for(let i  =  0 ;  i < arrr.length ; i  ++){
+    if(arrr[i]==item){
+
+      return  i+100
+    }
+  }
+}
+
+
+
  
+async  function  find_name(name , i){
+  const order = find( list_of_famous,name)
+  const  dats   =   await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
+  const resp   =  await dats.json();
+  
+  container.innerHTML += `
+  <div   class  =   'single_drink_container'>
+  <h2>${resp.drinks[0].strDrink}</h2>
+  <img src="${resp.drinks[0].strDrinkThumb}" alt=""> 
+  <h2  >${price_of_drinks[i]}$</h2>
+  <button  class='btn'  onclick ='make_order(${order})' >make an order?</button>
+  
+  </div>
+`
+
+
+}
+
+
+let how_many_orders = []
+let total_check = []
+
+
+
+function make_order(obj ){
+how_many_orders.push(obj)
+if(obj=='delete'){
+  how_many_orders=[]
+  total_check = []
+}
+btn_orders.innerHTML= 'your orders : '+how_many_orders.length
+  if(obj<50){
+    total_check.push(menu[obj].price)
+    ordered.innerHTML+=`<p> ${menu[obj].title}              :   ${menu[obj].price}  $     </p>  `
+  }  else if( obj>  100){
+    total_check.push(price_of_drinks[obj-100])
+    ordered.innerHTML+=`<p>${list_of_famous[obj-100] }        :   ${price_of_drinks[obj-100]} $  </p>   `
+  }
+  let sum  = 0;
+  for(let i   =0  ; i < total_check.length ; i ++){
+     sum+=total_check[i]
+  }
+  total_sum.innerHTML='total check is :' +sum+'$'
+//  use that on list_ordered_titles display_ordered(list_drinks)
+btn_orders.classList.add('order_accepted')
+setTimeout(() => {
+  btn_orders.classList.remove('order_accepted')
+}, 2000);
+}
+
+btn_orders.addEventListener('click' , ()=>{
+    order_container.style.left =   '50px'
+  })
+
+
+clear_items_btn.addEventListener('click' , ()=>{
+   ordered.innerHTML=''
+   make_order('delete')
+})
+
+close_orders.addEventListener('click' , ()=>{
+  order_container.style.left =  '-400px'
+})
+
+const  numbers   = []
+function generate_random_price(){
+    //console.log(Math.floor(Math.random()*19));
+    let  number  =  Math.floor(Math.random()*19)
+    if(number< 8){
+         number = number+8
+    }
+   return number
+        //console.log(numbers);
+} 
+
+for(let i = 0 ;  i <list_of_famous.length;   i ++){
+    generate_random_price()
+}
+
+console.log(numbers);
+
+
+const container   =  document.querySelector('.container')
  
   const breakfast_btn =  document.querySelector('.breakfast')
   const lunch_btn  =  document.querySelector('.lunch')
@@ -191,6 +259,7 @@ list_of_famous.forEach(find_name)
          <img src='${menu[i].img}'>
          <h1>${menu[i].price}</h1>
          <p>${menu[0].desc}</p>
+         <button  onclick = 'make_order(${i})' class=  'btn'>make order</button>
         </div>
         ` 
       }
@@ -226,9 +295,9 @@ const gallery_list_item   =  document.querySelector('.gallery_in_nav')
 const chefs   =  document.querySelector('.chefs')
 const contacts   = document.querySelector('.contacts')
 const wine  = document.querySelector('.wine')
-
+const about_cover   = document.querySelector('.about_cover')
 about_list_item.addEventListener('click' ,  ()=>{
-  hero.scrollIntoView()
+ about_cover.scrollIntoView()
 })
 
 menu_list_item.addEventListener('click' , ()=>{
