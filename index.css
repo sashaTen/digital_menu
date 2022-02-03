@@ -16,8 +16,18 @@ img{
 h2  , h1 , p{
     color: rgb(27, 146, 175);
 }
+.bar_container{
+    display: none;
+}
+.bar{
 
+    background: black;
+    width:40px ;
+    height: 5px;
+    margin:4px ;
+}
 .container{
+    overflow: scroll;
     padding-left: 50px;
     background-color:black;
     width: 95%;
@@ -27,7 +37,7 @@ h2  , h1 , p{
     margin-top:100px ;
     row-gap: 30px;
     border: rgb(27, 146, 175) 3px solid;
-
+    height: 100vh;
 }
 .single_drink_container {
     display: grid;
@@ -95,6 +105,9 @@ ul{
     list-style-type: none;
     gap: 25px;
     margin-right: 100px;
+}
+.ul_btn{
+    display: none;
 }
 li{
     font-size: 1.4rem;
@@ -479,3 +492,167 @@ color: black;
     height: 200px;
 }
 
+/*  mobile first */
+
+@media only screen and (max-width: 600px){
+
+.cafe_title{
+    font-size:1.2rem ;
+}
+.container_for_menu>ul{
+    display: none;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: relative;
+    left: 20px;
+    background: rgb(245, 245, 228);
+    z-index: 1;
+}
+
+
+.orders{
+    margin-top: 0px;
+}
+.bar_container{
+display: block;
+}
+.orders{
+    width: 100px;
+    margin-left: 0px;
+}
+
+.orders>h3{
+    font-size: 0.7rem;
+}
+.ul_btn{
+    width: 50px;
+    border: none;
+    background: black;
+    color: white;
+    display: block;
+}
+
+
+  
+.hero{
+    width: 100%;
+    height:50vh;
+    background-image: url('./images/item-1.jpeg');
+    background-size: 100%;
+    border:none;
+    opacity: 0;
+    transition: 1.2s;
+    object-fit: contain;
+    background-repeat: no-repeat;
+
+}
+
+
+.block_in_hero{
+    width: 70%;
+    height:0px;
+    background: rgb(4, 20, 20);
+    opacity: 0.6;
+    position: absolute;
+    top:    100px;
+    left: 50px;
+    transition: 2s;
+    
+    }
+
+
+.slogan_in_hero{
+        position: absolute;
+        top: 100px;
+        left : 80px ;
+        text-transform: capitalize;
+        opacity: 0;
+        transition: 2s;
+        }    
+  
+
+.offer{
+    font-size: 0.8rem;
+    width: 200px;
+}
+
+.about{
+    
+    height: 50vh;
+    background-repeat: no-repeat;
+}
+
+.cup{
+    
+    top: 0px;
+    left: 0px;
+    
+}
+.stick{
+    top: 95px;
+    left: 42px;
+    z-index: 1;
+}
+.bottom_of_cup{
+    top: 95px;
+    left: 10px;
+  }
+.wine{
+    top: 0px;
+    left: 0px;
+}
+.about_cover{
+    top: 520px;
+    left: 60px;
+    height: 30vh;
+   }
+
+ .about_us{
+    top: 10px;
+    left: 120px;
+    font-size: 1rem;
+}  
+
+
+
+.about>img{
+    width: 250px;
+    top: 10px;
+    left: 180px;
+    
+}
+.big_menu{
+    margin-top: -250px;
+    font-size: 1.2rem;
+    padding-left: 10%;
+    height: 10px;
+    text-transform: uppercase;
+}
+
+
+.header{
+    display: grid;
+    width: 250px;
+    top: 130px;
+    left: -50px;
+    
+}
+.header>.btn{
+    width: 100px;
+    font-size: 0.6rem;
+    
+}
+.container{
+    grid-template-columns: 1fr;
+    margin-left: 100px;
+    width: 350px;
+    margin-top: -80px;
+}
+.single_drink_container>img{
+    width: 250px;
+    left: 0px;
+}
+.sticky_container{
+    height: 100px;
+}
+}
