@@ -27,7 +27,7 @@ h2  , h1 , p{
     margin:4px ;
 }
 .container{
-    overflow: scroll;
+  
     padding-left: 50px;
     background-color:black;
     width: 95%;
@@ -37,7 +37,7 @@ h2  , h1 , p{
     margin-top:100px ;
     row-gap: 30px;
     border: rgb(27, 146, 175) 3px solid;
-    height: 100vh;
+    height: auto;
 }
 .single_drink_container {
     display: grid;
@@ -631,22 +631,33 @@ display: block;
 
 
 .header{
-    display: grid;
-    width: 250px;
-    top: 130px;
-    left: -50px;
+    display: flex;
+    width: 60%;
+    margin-right: 0px;
     
 }
 .header>.btn{
-    width: 100px;
     font-size: 0.6rem;
     
 }
+.breakfast{
+    position: relative;
+    left: -40px;
+
+}
+.lunch{
+    position: relative;
+    left: -80px;
+}
+.shakes{
+    position: relative;
+    left: -80px;
+}
 .container{
     grid-template-columns: 1fr;
-    margin-left: 100px;
+    margin-left: 50px;
     width: 350px;
-    margin-top: -80px;
+    margin-top: 100px;
 }
 .single_drink_container>img{
     width: 250px;
@@ -655,4 +666,141 @@ display: block;
 .sticky_container{
     height: 100px;
 }
+.gallery_greeting{
+    margin-top: 70px;
+    margin-left: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    transition: 1s ease;
+    transform: skewX(10deg);
+    border :    black  5px solid
 }
+.gallery_greeting>h1{
+    font-size: 1rem;
+    margin-left: 10px;
+    padding-top: 0px;
+    letter-spacing: 1px;
+    
+}
+
+
+
+.gallery_of_photos{
+    display: grid;
+    grid-template-columns:repeat(2 ,   1fr) ;
+}
+.gallery_of_photos>img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin : 20px;
+    
+   
+}
+
+
+
+.description>img{
+    width: 300px;
+    border-radius:10% ;
+    margin-left: 20px;
+    z-index: 1;
+    border: white 2px  solid;
+}
+.description>h1{
+    font-size: 1rem;
+    margin-left: 0px;
+    z-index: 1;
+    color: white;
+}
+.description>p{
+    margin-left:50px;
+    width: 200px;
+    z-index: 1;
+    color: white;
+}
+.desc_background{
+    background: black;
+    width: 400px;
+    height: 600px;
+    opacity: 0.5;
+    position: absolute;
+    top: 150;
+    left: 0px;
+}
+.food_for_health{
+    display: none;
+}
+.plate{
+    display: none;
+}
+
+
+.chef_title>h1{
+    margin-left: 50px;
+    font-size: 1.1rem;
+ 
+}
+
+
+.our_chefs{
+    display: grid;
+    margin-left: 20px;
+    margin-top: 100px;
+
+}
+.single_chef>p{
+    position: relative;
+    bottom: 90%;
+    left: 5%;
+    color: black;
+    font-weight: bold;
+    z-index: 1;
+    transition: 1.2s;
+    opacity: 0;
+}
+.single_chef{
+    width: 200px;
+    height: 200px;
+    margin-bottom:30px ;
+}
+.single_chef>img{
+    width: 200px;
+    height: 200px;
+}
+.chef_back{
+    width: 0px;
+    height: 50px;
+    background: pink;
+    opacity: 0.7;
+    position: relative;
+    bottom: 130px;
+    left: 0px;
+    transition: 0.8s;
+}
+
+.single_chef:hover >p{
+    opacity: 1;
+}
+.single_chef:hover>.chef_back{
+   width: 200px;
+}
+
+.contact_container{
+    display: grid;
+    grid-template-columns: 1fr ;
+    width: 300px;
+    margin-left:50px ;
+    margin-top: 40px;
+    height: 0px;
+   margin-bottom: 100px;
+}
+.space{
+    width: 100%;
+    height: 200px;
+}
+}
+
+
