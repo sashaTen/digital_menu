@@ -426,11 +426,7 @@ const black_back_timer =setTimeout(() => {
 
 function   set_time_for_hero(){
   if(window.innerWidth< 600){
-  
-container.addEventListener('scroll' ,  ()=>{
-  header.style.position='fixed'
-  container.style.marginTop = '80px'
-})
+
 
 
   clearTimeout(black_back_timer)
@@ -444,7 +440,4 @@ setTimeout(() => {
 
 }
 set_time_for_hero()
-document.body.addEventListener('click' ,  ()=>{
-  header.style.position = 'relative'
-  container.style.marginTop = '-80px'
-})
+
