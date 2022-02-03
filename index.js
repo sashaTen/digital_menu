@@ -75,7 +75,10 @@ const menu = [
     },
   ];
 
-
+const ul_btn  =  document.querySelector('.ul_btn')  
+const  bar_container =  document.querySelector('.bar_container')
+const ul   =  document.querySelector('.container_for_menu>ul')
+const offer_btn  =  document.querySelector('.offer_btn')
 const total_sum  =  document.querySelector('.total')
 const clear_items_btn =   document.getElementById('clear_items')
 const ordered =  document.querySelector('.ordered')
@@ -168,6 +171,7 @@ setTimeout(() => {
 }, 2000);
 }
 
+
 btn_orders.addEventListener('click' , ()=>{
     order_container.style.left =   '50px'
   })
@@ -213,6 +217,8 @@ function  make_all_white(){
     btns[i].style.background =  'white'
   }
 }
+
+
 
 
 
@@ -279,10 +285,6 @@ setTimeout(() => {
 
 
 setTimeout(() => {
-  black_background.style.height =  '70vh'
-}, 2100);
-
-setTimeout(() => {
   slogan.style.opacity='1'
 }, 2300);
 const menu_board  = document.querySelector('.big_menu')
@@ -315,6 +317,10 @@ chefs.addEventListener('click' , ()=>{
 contacts.addEventListener('click' , ()=>{
   contanct_headline.scrollIntoView()
 })
+offer_btn.addEventListener('click' ,   ()=>{
+  menu_board.scrollIntoView()
+})
+
 
 setInterval(() => {
   wine.style.height = '100px'
@@ -402,3 +408,43 @@ setInterval(() => {
 }, 500);
 
 
+
+bar_container.addEventListener('click', ()=>{
+  ul.style.display =   'grid'
+  bar_container.style.display =  'none'
+})
+
+
+ul_btn.addEventListener('click' ,   ()=>{
+  bar_container.style = 'block'
+  ul.style.display =  'none'
+})
+
+const black_back_timer =setTimeout(() => {
+  black_background.style.height =  '70vh'
+}, 2100);
+
+function   set_time_for_hero(){
+  if(window.innerWidth< 600){
+  
+container.addEventListener('scroll' ,  ()=>{
+  header.style.position='fixed'
+  container.style.marginTop = '80px'
+})
+
+
+  clearTimeout(black_back_timer)
+  
+setTimeout(() => {
+  black_background.style.height =  '330px'
+}, 1100);
+
+}
+
+
+}
+set_time_for_hero()
+document.body.addEventListener('click' ,  ()=>{
+  header.style.position = 'relative'
+  container.style.marginTop = '-80px'
+})
