@@ -11,6 +11,7 @@ body{
 img{
     width: 300px;
     border:  rgb(27, 146, 175) 5px  solid;
+    transition: 2s;
     }
 
 h2  , h1 , p{
@@ -28,12 +29,14 @@ h2  , h1 , p{
 }
 .container{
   
-    padding-left: 50px;
-    background-color:black;
+    background-color: rgb(243, 243, 234);
+    gap: 0px;
+    opacity: 0;
+    transition: 2s;
+    padding-left: -550px;
     width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
     margin-top:100px ;
     row-gap: 30px;
     border: rgb(27, 146, 175) 3px solid;
@@ -210,11 +213,11 @@ background: white;
 }
 
 .about>img{
-    width: 600px;
+    width: 0px;
     height: auto;
     position: absolute;
     top: 100px;
-    left: 700px;
+    left: -700px;
     opacity: 1;
     transition: 2.5s;
     border: solid 1px black;
@@ -222,11 +225,12 @@ background: white;
   .about_cover{
       top: 950px;
       position: absolute;
-      width: 70%;
+      width: 0%;
       height: 70vh;
       background: black;
-      opacity: 0.5;
+      opacity: 0;
       left: 150px;
+      transition: 2s;
   }
 .cup{
     position: absolute;
@@ -281,6 +285,8 @@ background: white;
     left: 400px;
     z-index:1;
     font-size: 1.4rem;
+    transition: 2.3s;
+    opacity: 0;
 }
 .big_menu{
     margin-top: -200px;
@@ -296,6 +302,10 @@ background: white;
 .gallery_of_photos{
     display: grid;
     grid-template-columns:repeat(3 ,   1fr) ;
+    opacity: 0;
+    margin-left: -500px;
+    transition: 2.5s;
+    
 }
 .gallery_of_photos>img{
     width: 400px;
@@ -391,7 +401,9 @@ background: white;
 
 .chef_title{
     display: flex;
-    margin-left: 10%;
+    margin-left: -110%;
+    opacity: 0;
+    transition: 2.5s;
     flex-wrap: wrap;
     margin-top: 100px;
 }
@@ -436,9 +448,10 @@ background: white;
 }
 .our_chefs{
     display: flex;
-    margin-left: 150px;
+    margin-left: -350px;
     margin-top: 100px;
-
+    opacity: 0;
+    transition: ease  2s;
 }
 .single_chef>p{
     position: relative;
@@ -482,7 +495,9 @@ color: black;
     display: grid;
     grid-template-columns:1fr 1fr ;
     width: 500px;
-    margin-left:500px ;
+    margin-left:-500px ;
+    opacity: 0;
+    transition: 2.5s;
     margin-top: 100px;
     height: 0px;
    margin-bottom: 100px;
@@ -802,5 +817,3 @@ display: block;
     height: 200px;
 }
 }
-
-
