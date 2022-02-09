@@ -74,7 +74,7 @@ const menu = [
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
   ];
-
+const  all_imgs  =  document.getElementsByClassName('img')
 const ul_btn  =  document.querySelector('.ul_btn')  
 const  bar_container =  document.querySelector('.bar_container')
 const ul   =  document.querySelector('.container_for_menu>ul')
@@ -201,7 +201,7 @@ for(let i = 0 ;  i <list_of_famous.length;   i ++){
     generate_random_price()
 }
 
-console.log(numbers);
+//console.log(numbers);
 
 
 const container   =  document.querySelector('.container')
@@ -287,6 +287,10 @@ setTimeout(() => {
 setTimeout(() => {
   slogan.style.opacity='1'
 }, 2300);
+const contacts   =   document.querySelector('.contact_container')
+const  gallery_of_photos   =  document.querySelector('.gallery_of_photos')
+const about_us   = document.querySelector('.about_us')
+const about  =  document.querySelector('.about')
 const menu_board  = document.querySelector('.big_menu')
 const header  =   document.querySelector('.header')
 const about_img  = document.querySelector('.about>img')
@@ -295,7 +299,6 @@ const menu_list_item   =  document.querySelector('.menu')
 const home_list_item   =  document.querySelector('.home')
 const gallery_list_item   =  document.querySelector('.gallery_in_nav')
 const chefs   =  document.querySelector('.chefs')
-const contacts   = document.querySelector('.contacts')
 const wine  = document.querySelector('.wine')
 const about_cover   = document.querySelector('.about_cover')
 about_list_item.addEventListener('click' ,  ()=>{
@@ -312,6 +315,7 @@ gallery_greet_background.scrollIntoView()
 
 chefs.addEventListener('click' , ()=>{
   chefs_container.scrollIntoView()
+ 
 })
 
 contacts.addEventListener('click' , ()=>{
@@ -441,3 +445,61 @@ setTimeout(() => {
 }
 set_time_for_hero()
 
+const  our_chefs =  document.querySelector('.our_chefs')
+
+
+
+/*  
+.our_chefs{
+    display: flex;
+    margin-left: 150px;
+    margin-top: 100px;
+
+  */
+
+
+window.addEventListener('scroll' ,   show_if_intoView)
+
+
+function show_if_intoView(){
+  let chefs_container_from_viewport =    chefs_container.getBoundingClientRect()
+  
+  let gallery_of_photos_from_viewport   =   gallery_of_photos.getBoundingClientRect()
+  let  container_from_viewport   =   container.getBoundingClientRect()
+  let   chefs_from_viewport    =   our_chefs.getBoundingClientRect()
+  let   about_from_viewport    =   about.getBoundingClientRect()
+  if(chefs_from_viewport.top   < 400 && chefs_from_viewport.top  > -200){
+          our_chefs.style.marginLeft =   '150px'
+          our_chefs.style.opacity = '1'
+          contacts.style.marginLeft =  '500px'
+          contacts.style.opacity ='1'
+  }
+  else  if (about_from_viewport.top   < 400 && about_from_viewport.top  > -200){
+        about_img.style.width  =  '600px'
+        about_img.style.left =   '700px'
+        about_cover.style.width  = '70%'
+        about_cover.style.opacity = '0.5'
+        about_us.style.opacity =  '1'
+
+
+  }
+
+
+  else if(container_from_viewport.top  < 400  &&   container_from_viewport.top> -200){
+    container.style.background =  'black'
+    container.style.opacity = '1'
+    container.style.gap = '10px'
+    container.style.paddingLeft  =   '50px'
+    container.style.marginLeft = '0px'
+    
+  }
+
+  else if(gallery_of_photos_from_viewport.top  < 400  &&   gallery_of_photos_from_viewport.top> -200){
+      gallery_of_photos.style.marginLeft = '0px'
+      gallery_of_photos.style.opacity='1'
+  }
+  else if (chefs_container_from_viewport.top  < 400  &&   chefs_container_from_viewport.top> -200){
+    chefs_container.style.marginLeft = '10%'
+    chefs_container.style.opacity = '1'
+  }
+}
