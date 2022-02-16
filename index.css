@@ -817,3 +817,20 @@ display: block;
     height: 200px;
 }
 }
+
+.hidden_image{
+    opacity: 0;
+    width: 0;
+    position: relative;
+    transition:none ;
+}
+
+.img_container:hover >.hidden_image {
+     width: 500px;
+     opacity: 1;
+     z-index: 1;
+     position: absolute;
+     
+}
+
+
