@@ -129,7 +129,9 @@ async  function  find_name(name , i){
   container.innerHTML += `
   <div   class  =   'single_drink_container'>
   <h2>${resp.drinks[0].strDrink}</h2>
-  <img src="${resp.drinks[0].strDrinkThumb}" alt=""> 
+   <div  class  =  'img_container'>
+  <img  class='hidden_image' src="${resp.drinks[0].strDrinkThumb}" alt=""> 
+  <img class='main_image' src="${resp.drinks[0].strDrinkThumb}" alt=""> </div>
   <h2  >${price_of_drinks[i]}$</h2>
   <button  class='btn'  onclick ='make_order(${order})' >make an order?</button>
   
