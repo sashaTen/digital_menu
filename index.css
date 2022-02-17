@@ -1,3 +1,9 @@
+:root{
+    --main_color:  rgb(243, 243, 234);
+    --border_style: rgb(27, 146, 175) 3px solid;
+}
+
+
 *{
     box-sizing: border-box;
     font-family: cursive;
@@ -5,7 +11,7 @@
 }
 
 body{
-    background-color: rgb(243, 243, 234);
+    background-color: var(--main_color);
 }
 
 img{
@@ -29,7 +35,7 @@ h2  , h1 , p{
 }
 .container{
   
-    background-color: rgb(243, 243, 234);
+    background-color: var(--main_color);
     gap: 0px;
     opacity: 0;
     transition: 2s;
@@ -39,7 +45,7 @@ h2  , h1 , p{
     grid-template-columns: 1fr 1fr 1fr;
     margin-top:100px ;
     row-gap: 30px;
-    border: rgb(27, 146, 175) 3px solid;
+    border: var(--border_style);
     height: auto;
 }
 .single_drink_container {
@@ -82,7 +88,7 @@ h2  , h1 , p{
     margin-left: 50px;
     height: auto;
     width: 150px;
-    border: rgb(27, 146, 175) 3px solid;
+    border:var(--border_style);
     transition: 1.2s;
 }
 .btn:hover{
@@ -94,7 +100,7 @@ h2  , h1 , p{
     position: sticky;
     top:0px;
     z-index: 2;
-    background-color: rgb(243, 243, 234);
+    background-color:  var(--main_color);
     height: 120px;
 }
 .container_for_menu{
@@ -143,7 +149,7 @@ color: red;
     
 }
 span{
-    border: cadetblue 2px  solid;
+    border: none
 }
 .order_accepted{
     background:lightblue;
@@ -161,7 +167,7 @@ span{
     height: 100vh;
     background-image: url('./images/item-1.jpeg');
     background-size: 100%;
-    border: rgb(27, 146, 175) 3px solid;
+    border: var(--border_style);
     opacity: 0;
     transition: 1.2s;
 }
@@ -754,7 +760,7 @@ display: block;
 
 
 .chef_title>h1{
-    margin-left: 50px;
+    margin-left: 0px;
     font-size: 1.1rem;
  
 }
@@ -816,6 +822,7 @@ display: block;
     width: 100%;
     height: 200px;
 }
+
 }
 
 .hidden_image{
@@ -832,5 +839,6 @@ display: block;
      position: absolute;
      
 }
+
 
 
