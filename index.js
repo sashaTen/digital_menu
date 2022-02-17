@@ -108,7 +108,7 @@ const price_of_drinks=[11,12,12,9,8,17,13,14,12,10,9,11,12]
 
 
 const   list_of_famous   =   list.split(',');
-const arrr =  [1,2,3,6,5,4];
+
 function  find(arrr,item){
   for(let i  =  0 ;  i < arrr.length ; i  ++){
     if(arrr[i]==item){
@@ -129,7 +129,7 @@ async  function  find_name(name , i){
   container.innerHTML += `
   <div   class  =   'single_drink_container'>
   <h2>${resp.drinks[0].strDrink}</h2>
-   <div  class  =  'img_container'>
+  <div  class  =  'img_container'>
   <img  class='hidden_image' src="${resp.drinks[0].strDrinkThumb}" alt=""> 
   <img class='main_image' src="${resp.drinks[0].strDrinkThumb}" alt=""> </div>
   <h2  >${price_of_drinks[i]}$</h2>
@@ -444,6 +444,11 @@ setTimeout(() => {
 }
 
 
+
+window.addEventListener('scroll' ,   show_if_intoView)
+
+
+
 }
 set_time_for_hero()
 
@@ -459,11 +464,12 @@ const  our_chefs =  document.querySelector('.our_chefs')
 
   */
 
-
-window.addEventListener('scroll' ,   show_if_intoView)
-
-
 function show_if_intoView(){
+  let width     =    window.innerWidth
+  if(width<600){
+    our_chefs.style.marginLeft =  '0%'
+    contacts.style.marginLeft =  '10px'
+  }
   let chefs_container_from_viewport =    chefs_container.getBoundingClientRect()
   
   let gallery_of_photos_from_viewport   =   gallery_of_photos.getBoundingClientRect()
@@ -501,7 +507,12 @@ function show_if_intoView(){
       gallery_of_photos.style.opacity='1'
   }
   else if (chefs_container_from_viewport.top  < 400  &&   chefs_container_from_viewport.top> -200){
+   
+   
+   
     chefs_container.style.marginLeft = '10%'
     chefs_container.style.opacity = '1'
   }
 }
+
+
